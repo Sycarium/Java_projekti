@@ -15,17 +15,18 @@ public class Java_projecti {
 				if (AnswerYesorNo.equals("Y || y")) {
 		System.out.println("Question: Would you want to: A) Add Voice files to the bank.  B) Show list of voices C) Show list of voicelines within a voice  D) Add Voicelines on the Voices. E) Search voicelines on the bank. F) modify existing voice lines within a Voice. G) Delete voicelines on the bank. H) Delete Voices. J) Search a random  voice line");
 		
-		String Answer1 = in.nextLine();
+		char Answer1 = in.next().charAt(0);
+		Answer1 = Character.toUpperCase(Answer1);
 			switch (Answer1) {
 			
-				case "A || a":
+				case 'A':
 					System.out.println("Name of the Voice?");
-					String Name = in.nextLine();
+					String Name = in.next();
 					Voices.write( Name);
 					
 					break;
 					
-				case "B || b":
+				case 'B':
 					System.out.println("List of voices");
 					 Scanner Voices2 = new Scanner("Voices.txt");
 					 while (Voices2.hasNext()) {
@@ -34,7 +35,7 @@ public class Java_projecti {
 					}
 					break;
 					
-				case ("C || c"): 
+				case 'C': 
 					System.out.println("Pick a voice to see its voice lines");
 					System.out.println("List of voices");
 					 Scanner Voices3 = new Scanner("Voices.txt");
@@ -50,7 +51,7 @@ public class Java_projecti {
 					 }
 					 break;
 					 
-				case ("D || d"):  
+				case 'D' :  
 					System.out.println("Choose a Voice to which you want to add a voiceline");
 					System.out.println("List of voices");
 					 Scanner Voices4 = new Scanner("Voices.txt");
@@ -65,7 +66,7 @@ public class Java_projecti {
 			      VoicelineWriter.write( in.nextLine());
 			      	break;
 				
-				case ("E || e"):
+				case 'E':
 					System.out.println("Write the Voice in which you want to search a voice line");
 					System.out.println("List of voices");
 					 Scanner Voices5 = new Scanner("Voices.txt");
@@ -95,7 +96,7 @@ public class Java_projecti {
 					 		break;
 					 		
 					 		
-					 		case ("F || f"):
+					 		case 'F' :
 					 			System.out.println("Write the Voice in which you want to modify a voice line");
 								System.out.println("List of voices");
 								 Scanner Voices6 = new Scanner("Voices.txt");
@@ -106,7 +107,7 @@ public class Java_projecti {
 								 }
 								 	// code to modify files here. Possibly modifyFile()
 					 			
-					 		case ("G || g"): 
+					 		case 'G': 
 					 			System.out.println("Write the Voice in which you want to Delete a voice line");
 								System.out.println("List of voices");
 								 Scanner Voices7 = new Scanner("Voices.txt");
@@ -120,12 +121,12 @@ public class Java_projecti {
 								 	
 					 		break;
 					 		
-					 		case ("H || h"):
+					 		case 'H':
 					 			System.out.println("Choose to delete a voice. Don't do it on a whim...");
 					 			
 					 		break;
 					 		
-					 		case ("J || j"): 
+					 		case 'J': 
 					 			System.out.println("Generating random voiceline...");
 					 			Scanner Voices8 = new Scanner(Voices.txt);
 					 			Scanner CollectionofVoices = new Scanner ("VoiceLineCollection.txt");
