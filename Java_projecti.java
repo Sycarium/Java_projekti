@@ -21,7 +21,7 @@ public class Java_projecti {
 				case "A || a":
 					System.out.println("Name of the Voice?");
 					String Name = in.nextLine();
-					Voices.write( Name + ".txt");
+					Voices.write( Name);
 					
 					break;
 					
@@ -47,8 +47,9 @@ public class Java_projecti {
 					 while (VoicelineShower.hasNext()) {
 					 String Voiceline = VoicelineShower.next();
 					System.out.println(Voiceline);
-					break;
 					 }
+					 break;
+					 
 				case ("D || d"):  
 					System.out.println("Choose a Voice to which you want to add a voiceline");
 					System.out.println("List of voices");
