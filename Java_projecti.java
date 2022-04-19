@@ -13,7 +13,7 @@ public class Java_projecti {
 			String AnswerYesorNo = in.nextLine();
 			
 				if (AnswerYesorNo.equals("Y || y")) {
-		System.out.println("Question: Would you want to: A) Add Voice files to the bank.  B) Show list of voices C) Show list of voicelines within a voice  D) Add Voicelines on the Voices. E) Search voicelines on the bank. F) modify existing voice lines within a Voice. G) Delete voicelines on the bank. H) Delete Voices. J) Search a random  voice line");
+		System.out.println("Question: Would you want to: A) Add Voice files to the bank.  B) Show list of voices C) Show list of voicelines within a voice  D) Add Voicelines on the Voices. E) Search voicelines on the bank. F) modify existing voice lines within a Voice. G) Delete voicelines on the bank. H) Delete Voices. I) Search a random  voice line");
 		
 		char Answer1 = in.next().charAt(0);
 		Answer1 = Character.toUpperCase(Answer1);
@@ -36,7 +36,7 @@ public class Java_projecti {
 					break;
 					
 				case 'C': 
-					System.out.println("Pick a voice to see its voice lines");
+					System.out.println("Write the Voice to see its voice lines");
 					System.out.println("List of voices");
 					 Scanner Voices3 = new Scanner("Voices.txt");
 					 while (Voices3.hasNext()) {
@@ -126,32 +126,36 @@ public class Java_projecti {
 					 			
 					 		break;
 					 		
-					 		case 'J': 
-					 			System.out.println("Generating random voiceline...");
-					 			Scanner Voices8 = new Scanner("Voices.txt");
-					 			Scanner CollectionofVoices = new Scanner ("VoiceLineCollection.txt");
-								 while (Voices8.hasNext()) {
-								 Voice = Voices8.next();
-								 CollectionofVoices.write(Voice);
-								 }
-								 while (CollectionofVoices.hasNext()) {
-								 String VoicelineArray[];
-								 VoicelineArray.add(CollectionofVoices.Next());
-								 
-								 }
-							      
-								 double number = Math.random() * VoicelineArray.length();
-								 System.out.println(VoicelineArray(number));
-								 break;
+					 		case 'I': 
+                                System.out.println("Generating random voiceline...");
+                                Scanner Voices8 = new Scanner("Voices.txt");
+                                FileWriter CollectionofVoices = new FileWriter ("VoiceLineCollection.txt");
+                                Scanner CollectionofVoices2 = new Scanner ("VoiceLineCollection.txt");
+                                while (Voices8.hasNext()) {
+                                Voice = Voices8.next();
+                                CollectionofVoices.write(Voice);
+                                }
+                                while (CollectionofVoices2.hasNext()) {
+                                String [] VoicelineArray;
+                                VoicelineArray.add(CollectionofVoices2.next());
+
+
+                                double number = (Math.random()*(VoicelineArray.length));
+                                System.out.println(number);
+                                break;
+                                }
+
 								
+								 
 					 		}
-					 	}
+					 	
 			
 			if (AnswerYesorNo.equals( ("N || n"))) {
 				break;
 	}
 			
 	}
+				}
 				}
 		
 	
