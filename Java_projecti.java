@@ -142,10 +142,11 @@ public class Java_projecti {
 							      
 								 double number = Math.random() * VoicelineArray.length();
 								 System.out.println(VoicelineArray(number));
-								 
-								}
-				}
-		
+								 break;
+								
+					 		}
+					 	}
+			
 			if (AnswerYesorNo.equals( ("N || n"))) {
 				break;
 	}
@@ -154,4 +155,4 @@ public class Java_projecti {
 				}
 		
 	
-		
+				
