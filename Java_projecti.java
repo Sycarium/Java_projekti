@@ -39,7 +39,7 @@ public class Java_projecti {
 					System.out.println("Pick a voice to see its voice lines");
 					System.out.println("List of voices");
 					 Scanner Voices3 = new Scanner("Voices.txt");
-					 while (Voices3.hasNext());
+					 while (Voices3.hasNext()) {
 					 String Voice = Voices3.next();
 					System.out.println(Voice);
 					}
@@ -84,7 +84,7 @@ public class Java_projecti {
 					 		for (int i=0; i<WordsSplit.length;i++) {
 					 		if (Voiceline.contains(WordsSplit[i])) {
 					 			continue;
-					 			if (WordsSplit[i].equals(WordSplit.length)) {
+					 			if (WordsSplit[i].equals(WordsSplit.length)) {
 					 				System.out.println(in.nextLine());
 					 			}
 					 		}
@@ -128,7 +128,7 @@ public class Java_projecti {
 					 		
 					 		case 'J': 
 					 			System.out.println("Generating random voiceline...");
-					 			Scanner Voices8 = new Scanner(Voices.txt);
+					 			Scanner Voices8 = new Scanner("Voices.txt");
 					 			Scanner CollectionofVoices = new Scanner ("VoiceLineCollection.txt");
 								 while (Voices8.hasNext()) {
 								 Voice = Voices8.next();
@@ -145,7 +145,7 @@ public class Java_projecti {
 								 
 								}
 				}
-		}
+		
 			if (AnswerYesorNo.equals( ("N || n"))) {
 				break;
 	}
