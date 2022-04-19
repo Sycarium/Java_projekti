@@ -134,11 +134,11 @@ public class Java_projecti {
 								 Voice = Voices8.next();
 								 CollectionofVoices.write(Voice);
 								 }
-								 while (CollectionofVoices.hasNext());
+								 while (CollectionofVoices.hasNext()) {
 								 String VoicelineArray[];
 								 VoicelineArray.add(CollectionofVoices.Next());
 								 
-								 
+								 }
 							      
 								 double number = Math.random() * VoicelineArray.length();
 								 System.out.println(VoicelineArray(number));
@@ -151,6 +151,7 @@ public class Java_projecti {
 	}
 			
 	}
+				}
 		
-	}
-}
+	
+		
