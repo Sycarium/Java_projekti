@@ -1,5 +1,8 @@
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
 public class Java_projecti {
 
 	public static void main(String args[]) {
@@ -70,12 +73,14 @@ public class Java_projecti {
 					System.out.println("Write the Voice in which you want to search a voice line");
 					System.out.println("List of voices");
 					 Scanner Voices5 = new Scanner("Voices.txt");
+					 Voice="";
 					 
 					 	while (Voices5.hasNext()) {
 					  Voice = Voices5.next();
 					System.out.println(Voice);
 					 }
 					 	System.out.println("Type word/ words you want to involve in the voice line");
+					 	if (Voice != "") {
 					 	Scanner Voicelines = new Scanner(Voice +".txt");
 					 String words =	in.nextLine();
 					  String WordsSplit[] = words.split(" "); 
@@ -83,16 +88,20 @@ public class Java_projecti {
 					 		String Voiceline = Voicelines.next();
 					 		for (int i=0; i<WordsSplit.length;i++) {
 					 		if (Voiceline.contains(WordsSplit[i])) {
-					 			continue;
-					 			if (WordsSplit[i].equals(WordsSplit.length)) {
+					 			
+					 			if (i == (WordsSplit.length)) {
 					 				System.out.println(in.nextLine());
 					 			}
 					 		}
+					 		
+					 		
 					 		else {
 					 			System.out.println("No Voiceline has all these words");
 					 			break;
 					 		}
-					 		
+					 		}
+					 	}
+					 	}
 					 		break;
 					 		
 					 		
@@ -131,20 +140,23 @@ public class Java_projecti {
                                 Scanner Voices8 = new Scanner("Voices.txt");
                                 FileWriter CollectionofVoices = new FileWriter ("VoiceLineCollection.txt");
                                 Scanner CollectionofVoices2 = new Scanner ("VoiceLineCollection.txt");
+                                List<String> VoicelineArray = new ArrayList<String>();
                                 while (Voices8.hasNext()) {
                                 Voice = Voices8.next();
                                 CollectionofVoices.write(Voice);
                                 }
                                 while (CollectionofVoices2.hasNext()) {
-                                String [] VoicelineArray;
+                                	
+                                	
+                                
                                 VoicelineArray.add(CollectionofVoices2.next());
+                                }
 
-
-                                double number = (Math.random()*(VoicelineArray.length));
+                                double number = (Math.random()*(VoicelineArray.size()));
                                 System.out.println(number);
                                 break;
                                 }
-
+                                break;
 								
 								 
 					 		}
@@ -157,6 +169,3 @@ public class Java_projecti {
 	}
 				}
 				}
-		
-	
-				
