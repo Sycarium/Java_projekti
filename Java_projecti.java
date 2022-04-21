@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,7 +8,8 @@ import java.util.Scanner;
 public class Java_projecti {
 
 	public static void main(String args[]) throws IOException {
-		FileWriter Voices = new FileWriter("Voices.txt");
+		FileWriter VoicesA = new FileWriter("Aron Niclaus");
+		File Voices = new File("Voices.txt");
 
 		while (true) {
 			System.out.println("Modify voicebank script database? Y or N");
@@ -32,7 +34,7 @@ public class Java_projecti {
 				case 'A':
 					System.out.println("Name of the Voice?");
 					String Name = in.next();
-					Voices.write(Name);
+					VoicesA.write(Name);
 
 					break;
 
@@ -113,13 +115,14 @@ public class Java_projecti {
 				case 'F':
 					System.out.println("Write the Voice in which you want to modify a voice line");
 					System.out.println("List of voices");
-					Scanner Voices6 = new Scanner("Voices.txt");
+					Scanner Voices6 = new Scanner(Voices);
 
 					while (Voices6.hasNext()) {
 						Voice = Voices6.next();
 						System.out.println(Voice);
 					}
 					// code to modify files here. Possibly modifyFile()
+					break;
 
 				case 'G':
 					System.out.println("Write the Voice in which you want to Delete a voice line");
@@ -155,8 +158,10 @@ public class Java_projecti {
 						VoicelineArray.add(CollectionofVoices2.next());
 					}
 
-					double number = (Math.random() * (VoicelineArray.size()));
-					System.out.println(number);
+					double number = Math.random();
+					long number2 = Math.round(number)* (VoicelineArray.size());
+					int number3 = Math.toIntExact(number2);
+					System.out.println(VoicelineArray.indexOf(number2));
 					break;
 				}
 				break;
