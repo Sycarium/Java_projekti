@@ -12,7 +12,7 @@ public class Java_projecti {
 
 		File Voices = new File("Voices.txt");
 		int SumofVoices= 0;
-		String Voicename = "";
+		String Voicename2 = "";
 
 		FileWriter VoicesList = new FileWriter("Voices");
 		VoicesList.write("I'm an alien");
@@ -36,6 +36,7 @@ public class Java_projecti {
 				System.out.println("H) Delete voices");
 				System.out.println("I) Search a random voiceline");
 				char Answer1 = in.next().charAt(0);
+				in.nextLine();
 				Answer1 = Character.toUpperCase(Answer1);
 				switch (Answer1) {
 
@@ -44,8 +45,8 @@ public class Java_projecti {
 					System.out.println("Name of the Voice?");
 					String Name = in.next();
 					String VoiceName = "Voicename" + SumofVoices;
-					String Voicename2 = Name+ ".txt";
-					File VoiceName1 = new File(Voicename2);
+					Voicename2 = Name+ ".txt";
+					File VoiceName1 = new File(VoiceName);
 					SumofVoices++;
 					VoicesList.write(Name);
 					VoicesList.close();
@@ -70,7 +71,7 @@ public class Java_projecti {
 						System.out.println(Voice);
 					}
 					String Voice = in.nextLine();
-					Scanner VoicelineShower = new Scanner(Voice);
+					Scanner VoicelineShower = new Scanner(Voicename2);
 					while (VoicelineShower.hasNext()) {
 						String Voiceline = VoicelineShower.next();
 						System.out.println(Voiceline);
@@ -85,23 +86,25 @@ public class Java_projecti {
 						Voice = Voices4.next();
 						System.out.println(Voice);
 					}
-					Voice = in.next();
+					Voice = in.nextLine();
 
 					System.out.println("Write a voice line to add to the file");
-					FileWriter VoicelineWriter = new FileWriter(Voice + ".txt");
+					FileWriter VoicelineWriter = new FileWriter(Voicename2);
 					VoicelineWriter.write(in.nextLine());
 					break;
 
 				case 'E':
 					System.out.println("Write the Voice in which you want to search a voice line");
 					System.out.println("List of voices");
-					Scanner Voices5 = new Scanner("Voices.txt");
+					Scanner Voices5 = new Scanner(Voices);
 					Voice = "";
+					
 
 					while (Voices5.hasNext()) {
 						Voice = Voices5.next();
 						System.out.println(Voice);
 					}
+					Voice= (in.next());
 					System.out.println("Type word/ words you want to involve in the voice line");
 					if (Voice != "") {
 						Scanner Voicelines = new Scanner(Voice + ".txt");
