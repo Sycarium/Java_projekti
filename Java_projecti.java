@@ -9,14 +9,14 @@ import java.util.Scanner;
 public class Java_projecti {
 
 	public static void main(String args[]) throws IOException {
-		
+
 		File Voices = new File("Voices.txt");
-		
+
 		FileWriter VoicesList = new FileWriter("Voices");
 		VoicesList.write("I'm an alien");
 		BufferedWriter Voiceslist2 = new BufferedWriter(new FileWriter(Voices));
-	    Voiceslist2.write("Michael Jakson");
-	    Voiceslist2.close();
+		Voiceslist2.write("Michael Jackson");
+		Voiceslist2.close();
 		while (true) {
 			System.out.println("Modify voicebank script database? Y or N");
 			Scanner in = new Scanner(System.in);
@@ -39,7 +39,7 @@ public class Java_projecti {
 
 				case 'A':
 					System.out.println("Name of the Voice?");
-					String Name = in.nextLine();
+					String Name = in.next();
 					VoicesList.write(Name);
 					VoicesList.close();
 					break;
@@ -49,7 +49,7 @@ public class Java_projecti {
 					final Scanner Voices2 = new Scanner(new File("Voices"));
 					while (Voices2.hasNext()) {
 						System.out.println(Voices2.nextLine());
-					
+
 					}
 					Voices2.close();
 					break;
@@ -78,7 +78,7 @@ public class Java_projecti {
 						Voice = Voices4.next();
 						System.out.println(Voice);
 					}
-					Voice = in.nextLine();
+					Voice = in.next();
 
 					System.out.println("Write a voice line to add to the file");
 					FileWriter VoicelineWriter = new FileWriter(Voice + ".txt");
@@ -166,12 +166,11 @@ public class Java_projecti {
 					}
 
 					double number = Math.random();
-					long number2 = Math.round(number)* (VoicelineArray.size());
+					long number2 = Math.round(number) * (VoicelineArray.size());
 					int number3 = Math.toIntExact(number2);
 					System.out.println(VoicelineArray.indexOf(number2));
 					break;
 				}
-				
 
 			}
 
