@@ -41,6 +41,7 @@ public class Java_projecti {
 					VoicesList = new FileWriter("Voices");
 					System.out.println("Name of the Voice?");
 					String Name = in.next();
+					File VoiceName = new File( Name +".txt");
 					VoicesList.write(Name);
 					VoicesList.close();
 					break;
@@ -58,7 +59,7 @@ public class Java_projecti {
 				case 'C':
 					System.out.println("Write the Voice to see its voice lines");
 					System.out.println("List of voices");
-					Scanner Voices3 = new Scanner("Voices.txt");
+					final Scanner Voices3 = new Scanner(new File("Voices"));
 					while (Voices3.hasNext()) {
 						String Voice = Voices3.next();
 						System.out.println(Voice);
