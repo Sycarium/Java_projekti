@@ -38,6 +38,7 @@ public class Java_projecti {
 				switch (Answer1) {
 
 				case 'A':
+					VoicesList = new FileWriter("Voices");
 					System.out.println("Name of the Voice?");
 					String Name = in.next();
 					VoicesList.write(Name);
