@@ -76,6 +76,7 @@ public class Java_projecti {
 						String Voiceline = VoicelineShower.next();
 						System.out.println(Voiceline);
 					}
+					Voices3.close();
 					break;
 
 				case 'D':
@@ -91,6 +92,8 @@ public class Java_projecti {
 					System.out.println("Write a voice line to add to the file");
 					FileWriter VoicelineWriter = new FileWriter(Voicename2);
 					VoicelineWriter.write(in.nextLine());
+					VoicelineWriter.close();
+					Voices4.close();
 					break;
 
 				case 'E':
@@ -127,6 +130,7 @@ public class Java_projecti {
 							}
 						}
 					}
+					Voices5.close();
 					break;
 
 				case 'F':
