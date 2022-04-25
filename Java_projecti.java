@@ -11,6 +11,7 @@ public class Java_projecti {
 	public static void main(String args[]) throws IOException {
 
 		File Voices = new File("Voices.txt");
+		int SumofVoices= 0;
 
 		FileWriter VoicesList = new FileWriter("Voices");
 		VoicesList.write("I'm an alien");
@@ -41,7 +42,9 @@ public class Java_projecti {
 					VoicesList = new FileWriter("Voices");
 					System.out.println("Name of the Voice?");
 					String Name = in.next();
-					File VoiceName = new File( Name +".txt");
+					String VoiceName = "Voicename" + SumofVoices;
+					VoiceName = new File( "Name +".txt");
+					SumofVoices++;
 					VoicesList.write(Name);
 					VoicesList.close();
 					break;
@@ -65,7 +68,7 @@ public class Java_projecti {
 						System.out.println(Voice);
 					}
 					String Voice = in.nextLine();
-					Scanner VoicelineShower = new Scanner(Voice + ".txt");
+					Scanner VoicelineShower = new Scanner("VoiceName");
 					while (VoicelineShower.hasNext()) {
 						String Voiceline = VoicelineShower.next();
 						System.out.println(Voiceline);
