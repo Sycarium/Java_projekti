@@ -12,6 +12,7 @@ public class Java_projecti {
 
 		File Voices = new File("Voices.txt");
 		int SumofVoices= 0;
+		String Voicename = "";
 
 		FileWriter VoicesList = new FileWriter("Voices");
 		VoicesList.write("I'm an alien");
@@ -43,7 +44,8 @@ public class Java_projecti {
 					System.out.println("Name of the Voice?");
 					String Name = in.next();
 					String VoiceName = "Voicename" + SumofVoices;
-					VoiceName = new File( "Name +".txt");
+					String Voicename2 = Name+ ".txt";
+					File VoiceName1 = new File(Voicename2);
 					SumofVoices++;
 					VoicesList.write(Name);
 					VoicesList.close();
@@ -68,7 +70,7 @@ public class Java_projecti {
 						System.out.println(Voice);
 					}
 					String Voice = in.nextLine();
-					Scanner VoicelineShower = new Scanner("VoiceName");
+					Scanner VoicelineShower = new Scanner(Voice);
 					while (VoicelineShower.hasNext()) {
 						String Voiceline = VoicelineShower.next();
 						System.out.println(Voiceline);
@@ -78,7 +80,7 @@ public class Java_projecti {
 				case 'D':
 					System.out.println("Choose a Voice to which you want to add a voiceline");
 					System.out.println("List of voices");
-					Scanner Voices4 = new Scanner("Voices.txt");
+					Scanner Voices4 = new Scanner(Voices);
 					while (Voices4.hasNext()) {
 						Voice = Voices4.next();
 						System.out.println(Voice);
