@@ -1,3 +1,4 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,9 +9,14 @@ import java.util.Scanner;
 public class Java_projecti {
 
 	public static void main(String args[]) throws IOException {
-		FileWriter VoicesA = new FileWriter("Aron Niclaus");
+		
 		File Voices = new File("Voices.txt");
-
+		
+		FileWriter VoicesList = new FileWriter("Voices");
+		VoicesList.write("I'm an alien");
+		BufferedWriter Voiceslist2 = new BufferedWriter(new FileWriter(Voices));
+	    Voiceslist2.write("Michael Jakson");
+	    Voiceslist2.close();
 		while (true) {
 			System.out.println("Modify voicebank script database? Y or N");
 			Scanner in = new Scanner(System.in);
@@ -33,18 +39,19 @@ public class Java_projecti {
 
 				case 'A':
 					System.out.println("Name of the Voice?");
-					String Name = in.next();
-					VoicesA.write(Name);
-
+					String Name = in.nextLine();
+					VoicesList.write(Name);
+					VoicesList.close();
 					break;
 
 				case 'B':
 					System.out.println("List of voices");
-					Scanner Voices2 = new Scanner("Voices.txt");
+					final Scanner Voices2 = new Scanner(new File("Voices"));
 					while (Voices2.hasNext()) {
-						String Voice = Voices2.next();
-						System.out.println(Voice);
+						System.out.println(Voices2.nextLine());
+					
 					}
+					Voices2.close();
 					break;
 
 				case 'C':
@@ -164,7 +171,7 @@ public class Java_projecti {
 					System.out.println(VoicelineArray.indexOf(number2));
 					break;
 				}
-				break;
+				
 
 			}
 
