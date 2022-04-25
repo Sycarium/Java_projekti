@@ -41,14 +41,14 @@ public class Java_projecti {
 				switch (Answer1) {
 
 				case 'A':
-					VoicesList = new FileWriter("Voices");
+					VoicesList = new FileWriter("Voices", true);
 					System.out.println("Name of the Voice?");
 					String Name = in.next();
 					String VoiceName = "Voicename" + SumofVoices;
 					Voicename2 = Name+ ".txt";
 					File VoiceName1 = new File(VoiceName);
 					SumofVoices++;
-					VoicesList.write(Name);
+					VoicesList.write(Name+"\n");
 					VoicesList.close();
 					break;
 
@@ -107,7 +107,7 @@ public class Java_projecti {
 						Voice = Voices5.next();
 						System.out.println(Voice);
 					}
-					Voice= (in.next());
+					Voice= (Voices5.next());
 					System.out.println("Type word/ words you want to involve in the voice line");
 					if (Voice != "") {
 						Scanner Voicelines = new Scanner(Voice + ".txt");
