@@ -1,4 +1,3 @@
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,14 +10,16 @@ public class Java_projecti {
 	public static void main(String args[]) throws IOException {
 
 		File Voices = new File("Voices.txt");
-		int SumofVoices= 0;
+		int SumofVoices = 0;
+		int SumOfVoiceLines = 0;
 		String Voicename2 = "";
 
 		FileWriter VoicesList = new FileWriter("Voices");
 		VoicesList.write("I'm an alien");
-		//BufferedWriter Voiceslist2 = new BufferedWriter(new FileWriter("Voices.txt"));
-		//Voiceslist2.write("Michael Jackson");
-		//Voiceslist2.close();
+		// BufferedWriter Voiceslist2 = new BufferedWriter(new
+		// FileWriter("Voices.txt"));
+		// Voiceslist2.write("Michael Jackson");
+		// Voiceslist2.close();
 		while (true) {
 			System.out.println("Modify voicebank script database? Y or N");
 			Scanner in = new Scanner(System.in);
@@ -45,11 +46,11 @@ public class Java_projecti {
 					System.out.println("Name of the Voice?");
 					String Name = in.nextLine();
 					String VoiceName = "Voicename" + SumofVoices;
-					Voicename2 = Name+ SumofVoices + ".txt";
+					Voicename2 = Name + SumofVoices + ".txt";
 					File VoiceName1 = new File(VoiceName);
 					FileWriter VoicesList1 = new FileWriter(Voicename2);
 					SumofVoices++;
-					VoicesList.write(Name+"\n");
+					VoicesList.write(Name + "\n");
 					VoicesList.close();
 					break;
 
@@ -82,9 +83,7 @@ public class Java_projecti {
 
 				case 'D':
 
-					int SumOfVoiceLines = 0;
-					
-					System.out.println("Write the Voice to which you want to add a voiceline");
+					System.out.println("Write the voice to which you want to add a voiceline");
 					System.out.println("List of voices");
 					Scanner Voices4 = new Scanner(Voices);
 					while (Voices4.hasNextLine()) {
@@ -92,10 +91,9 @@ public class Java_projecti {
 						System.out.println(Voice);
 					}
 					Voice = in.nextLine();
-
-					System.out.println("Write a voice line to add to the file");
-					FileWriter VoicelineWriter = new FileWriter(Voicename2);
-					VoicelineWriter.write(SumOfVoiceLines + " " +in.nextLine());
+					System.out.println("Write a voiceline to add to the file");
+					FileWriter VoicelineWriter = new FileWriter(Voicename2, true);
+					VoicelineWriter.write(SumOfVoiceLines + " " + in.nextLine() + "\n");
 					VoicelineWriter.close();
 					Voices4.close();
 					SumOfVoiceLines++;
@@ -106,13 +104,12 @@ public class Java_projecti {
 					System.out.println("List of voices");
 					Scanner Voices5 = new Scanner(Voices);
 					Voice = "";
-					
 
 					while (Voices5.hasNextLine()) {
 						Voice = Voices5.nextLine();
 						System.out.println(Voice);
 					}
-					Voice= (Voices5.next());
+					Voice = (Voices5.next());
 					System.out.println("Type word/ words you want to involve in the voice line");
 					if (Voice != "") {
 						Scanner Voicelines = new Scanner(Voice + ".txt");
