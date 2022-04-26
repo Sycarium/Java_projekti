@@ -121,10 +121,13 @@ public class Java_projecti {
 						Voice = Voices5.nextLine();
 						System.out.println(Voice);
 					}
-					Voice= (Voices5.next());
+					
+					//Voice= (Voices5.nextLine());
+					String VoiceChosen = in.nextLine();
 					System.out.println("Type word/ words you want to involve in the voice line");
-					if (Voice != "") {
-						Scanner Voicelines = new Scanner(Voice + ".txt");
+					if (Voice!= "") {
+						
+						Scanner Voicelines = new Scanner(VoiceChosen + ".txt");
 						String words = in.nextLine();
 						String WordsSplit[] = words.split(" ");
 						while (Voicelines.hasNext()) {
@@ -187,8 +190,9 @@ public class Java_projecti {
 					}
 					int IndexPicked=in.nextInt();
 					final Scanner Voices10 = new Scanner(new File("Voiceswithoutindex.txt"));
+					String VoicepickedbyIndex="";
 					for (int y=0;y<=IndexPicked; y++) {
-						String VoicepickedbyIndex= Voices10.nextLine();
+						 VoicepickedbyIndex= Voices10.nextLine();
 
 					}
 					Voices10.close();
@@ -220,7 +224,8 @@ public class Java_projecti {
 					double number = Math.random();
 					long number2 = Math.round(number) * (VoicelineArray.size());
 					int number3 = Math.toIntExact(number2);
-					System.out.println(VoicelineArray.indexOf(number2));
+					System.out.println(VoicelineArray[number3]);
+					
 					break;
 				}
 
