@@ -58,6 +58,9 @@ public class Java_projecti {
 					IndexOfVoices = Voicename2;
 					SumofVoices++;
 					x++;
+					File Voiceswithoutindex = new File("Voiceswithoutindex.txt");
+					FileWriter VoicesList3 = new FileWriter("Voiceswithoutindex.txt");
+					VoicesList3.write(Name);
 					VoicesList.close();
 					break;
 
@@ -185,9 +188,16 @@ public class Java_projecti {
 						Voice = Voices8.nextLine();
 						System.out.println(Voice);
 					}
-					String VoicelinePicked=in.nextLine();
+					int IndexPicked=in.nextInt();
+					final Scanner Voices10 = new Scanner(new File("Voiceswithoutindex.txt"));
+					for (int y=0;y<=IndexPicked; y++) {
+						String VoicepickedbyIndex= Voices10.nextLine();
+
+					}
+					Voices10.close();
 					
-					File NewFile = new File(VoicelinePicked +"txt"); 
+					
+					File NewFile = new File(VoicepickedbyIndex +"txt"); 
 				    if (NewFile.delete()) { 
 				      System.out.println("Deleted the folder: " + NewFile.getName());
 				    } else {
