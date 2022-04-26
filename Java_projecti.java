@@ -60,7 +60,7 @@ public class Java_projecti {
 					x++;
 					File Voiceswithoutindex = new File("Voiceswithoutindex.txt");
 					FileWriter VoicesList3 = new FileWriter("Voiceswithoutindex.txt");
-					VoicesList3.write(Name);
+					VoicesList3.write(Name+SumofVoices);
 					VoicesList.close();
 					break;
 
@@ -197,7 +197,7 @@ public class Java_projecti {
 					Voices10.close();
 					
 					
-					File NewFile = new File(VoicepickedbyIndex +"txt"); 
+					File NewFile = new File(VoicepickedbyIndex+"txt"); 
 				    if (NewFile.delete()) { 
 				      System.out.println("Deleted the folder: " + NewFile.getName());
 				    } else {
@@ -207,12 +207,12 @@ public class Java_projecti {
 
 				case 'I':
 					System.out.println("Generating random voiceline...");
-					Scanner Voices8 = new Scanner("Voices.txt");
+					Scanner Voices9 = new Scanner("Voices.txt");
 					FileWriter CollectionofVoices = new FileWriter("VoiceLineCollection.txt");
 					Scanner CollectionofVoices2 = new Scanner("VoiceLineCollection.txt");
 					List<String> VoicelineArray = new ArrayList<String>();
-					while (Voices8.hasNext()) {
-						Voice = Voices8.next();
+					while (Voices9.hasNext()) {
+						Voice = Voices9.next();
 						CollectionofVoices.write(Voice);
 					}
 					while (CollectionofVoices2.hasNext()) {
