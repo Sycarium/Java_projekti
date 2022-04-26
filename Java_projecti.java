@@ -20,8 +20,7 @@ public class Java_projecti {
 		//Voiceslist2.write("Michael Jackson");
 		//Voiceslist2.close();
 		int SumOfVoiceLines = 0;
-		int intarray[];
-		int x =0;
+		
 		while (true) {
 			System.out.println("Modify voicebank script database? Y or N");
 			Scanner in = new Scanner(System.in);
@@ -52,12 +51,10 @@ public class Java_projecti {
 					File VoiceName1 = new File(VoiceName);
 					FileWriter VoicesList1 = new FileWriter(Voicename2);
 					VoicesList.write(SumofVoices+Name+"\n");
-					
-					intarray[x] =  x;
 					String IndexOfVoices=Integer.toString(SumofVoices);
 					IndexOfVoices = Voicename2;
 					SumofVoices++;
-					x++;
+					
 					File Voiceswithoutindex = new File("Voiceswithoutindex.txt");
 					FileWriter VoicesList3 = new FileWriter("Voiceswithoutindex.txt");
 					VoicesList3.write(Name+SumofVoices);
