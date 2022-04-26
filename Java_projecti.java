@@ -41,12 +41,13 @@ public class Java_projecti {
 				switch (Answer1) {
 
 				case 'A':
-					VoicesList = new FileWriter("Voices", true);
+					VoicesList = new FileWriter("Voices.txt", true);
 					System.out.println("Name of the Voice?");
 					String Name = in.next();
 					String VoiceName = "Voicename" + SumofVoices;
-					Voicename2 = Name+ ".txt";
+					Voicename2 = Name+ SumofVoices + ".txt";
 					File VoiceName1 = new File(VoiceName);
+					FileWriter VoicesList1 = new FileWriter(Voicename2);
 					SumofVoices++;
 					VoicesList.write(Name+"\n");
 					VoicesList.close();
@@ -54,7 +55,7 @@ public class Java_projecti {
 
 				case 'B':
 					System.out.println("List of voices");
-					final Scanner Voices2 = new Scanner(new File("Voices"));
+					final Scanner Voices2 = new Scanner(new File("Voices.txt"));
 					while (Voices2.hasNext()) {
 						System.out.println(Voices2.nextLine());
 
@@ -65,7 +66,7 @@ public class Java_projecti {
 				case 'C':
 					System.out.println("Write the Voice to see its voice lines");
 					System.out.println("List of voices");
-					final Scanner Voices3 = new Scanner(new File("Voices"));
+					final Scanner Voices3 = new Scanner(new File("Voices.txt"));
 					while (Voices3.hasNext()) {
 						String Voice = Voices3.next();
 						System.out.println(Voice);
