@@ -27,7 +27,7 @@ public class Java_projecti {
 			Scanner in = new Scanner(System.in);
 			String AnswerYesorNo = in.nextLine();
 
-			if (AnswerYesorNo.equals("Y")) {
+			if (AnswerYesorNo.equals("Y") || AnswerYesorNo.equals("y")) {
 				System.out.println("Question: Would you want to:");
 				System.out.println("A) Add voice files to the bank");
 				System.out.println("B) Show list of voices");
@@ -194,12 +194,12 @@ public class Java_projecti {
 
 					String AnswerYesorNo2 = in.nextLine();
 
-					if (AnswerYesorNo2.equals("Y")) {
+					if (AnswerYesorNo.equals("Y") || AnswerYesorNo.equals("y")) {
 						
 					VoicelineTroughIndex.replace(VoicelineTroughIndex, "");
 					}
 					
-					if (AnswerYesorNo2.equals(("N"))) {
+					if (AnswerYesorNo.equals("N") || AnswerYesorNo.equals("n")) {
 						System.out.println("Voiceline is still there!");
 					}
 
@@ -262,7 +262,7 @@ public class Java_projecti {
 
 			}
 
-			if (AnswerYesorNo.equals(("N"))) {
+			if (AnswerYesorNo.equals("N") || AnswerYesorNo.equals("n")) {
 				break;
 			}
 
