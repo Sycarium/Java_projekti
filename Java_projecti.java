@@ -220,15 +220,37 @@ public class Java_projecti {
 					}
 
 					scnr.close();
-				
+					// String rivi;
+	                    
+				     // Scanner scan1 = new Scanner(System.in);
+				      
+				     // System.out.print("Enter the line to Delete: ");
+				     // rivi = scan1.nextLine();
+				      
+				     // File file1 = new File(filename1 + ".txt");
+				     // List<String> out1 = Files.lines(file1.toPath())
+				                     //     .filter(line -> !line.contains(rivi))
+				                     //     .collect(Collectors.toList());
+				      //Files.write(file1.toPath(), out1, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+
 					break;
 
 				case 'H':
 					
 					System.out.println("Choose to delete a voice. Don't do it on a whim...");
 					
+					// System.out.print("Enter the Name of File to Delete: ");
+				    // filename = scan.nextLine();
+				      
+				     // File myfile = new File(filename+ ".txt");
+					// if(myfile.delete()) {
+				       //  System.out.println("\nThe file is deleted successfully!");
+				    //  } else {
+				     //    System.out.println("\nSomething went wrong!");
+					
+					
 					System.out.println("Pick the index of a voice");
-				      //System.out.print("Enter the Name of File to Delete: ");
+			
 					System.out.println("List of voices");
 					Scanner Voices8 = new Scanner("Voices.txt");
 					
@@ -237,8 +259,7 @@ public class Java_projecti {
 						System.out.println(Voice);
 						
 					}
-					//String filename;
-					//filename = scan.nextLine();
+					
 					int IndexPicked = in.nextInt();
 					final Scanner Voices10 = new Scanner(new File("Voiceswithoutindex.txt"));
 					String VoicepickedbyIndex = "";
@@ -246,6 +267,7 @@ public class Java_projecti {
 						VoicepickedbyIndex = Voices10.nextLine();
 
 					}
+					
 
 					Voices10.close();
 
