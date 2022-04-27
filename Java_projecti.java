@@ -165,17 +165,37 @@ public class Java_projecti {
 					break;
 
 				case 'G':
-					System.out.println("Write the Voice in which you want to Delete a voice line");
+					System.out.println("Write the voice in which you want to delete a voiceline");
 					System.out.println("List of voices");
-					Scanner Voices7 = new Scanner("Voices.txt");
-
-					while (Voices7.hasNextLine()) {
-						Voice = Voices7.nextLine();
-						System.out.println(Voice);
+					final Scanner Voices7 = new Scanner(new File("Voices.txt"));
+					while (Voices7.hasNext()) {
+						System.out.println(Voices7.nextLine());
+						while (Voices7.hasNextLine()) {
+							Voice = Voices7.nextLine();
+							System.out.println(Voice);
+						}
 					}
-					System.out.println("Write the voice line you want to delete");
-					System.out.println("List of voicelines within the voice");
+					Scanner scnr = new Scanner(new FileInputStream(in.nextLine() + ".txt"));
+					System.out.println("Voiceline within the voice");
+					while (scnr.hasNextLine()) {
+						System.out.println(scnr.nextLine());
+					}
+					System.out.println("Do you want to delete the voiceline? Y or N");
 
+					String AnswerYesorNo2 = in.nextLine();
+
+					if (AnswerYesorNo2.equals("Y")) {
+						System.out.println("Write the voice name again");
+						FileOutputStream writer = new FileOutputStream(in.nextLine() + ".txt");
+						writer.write(("").getBytes());
+						writer.close();
+						System.out.println("Voiceline has been deleted");
+					}
+					if (AnswerYesorNo2.equals(("N"))) {
+						System.out.println("Voiceline is still there!");
+					}
+
+					scnr.close();
 					break;
 
 				case 'H':
