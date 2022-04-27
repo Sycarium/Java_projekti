@@ -1,11 +1,13 @@
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Java_projecti {
 
@@ -103,7 +105,7 @@ public class Java_projecti {
 					Voice = in.nextLine();
 
 					System.out.println("Write a voice line to add to the file");
-					FileWriter VoicelineWriter = new FileWriter(Voice + "txt", true);
+					FileWriter VoicelineWriter = new FileWriter(Voice + ".txt", true);
 				
 					VoicelineWriter.write(SumOfVoiceLines + " " +in.nextLine() +"\n");
 					VoicelineWriter.close();
@@ -157,13 +159,38 @@ public class Java_projecti {
 				case 'F':
 					System.out.println("Write the Voice in which you want to modify a voice line");
 					System.out.println("List of voices");
-					Scanner Voices6 = new Scanner(Voices);
+					final Scanner Voices6 = new Scanner(new File("Voices.txt"));
+					String VoicelineTroughIndex2= "";
 
 					while (Voices6.hasNextLine()) {
 						Voice = Voices6.nextLine();
 						System.out.println(Voice);
 					}
 					// code to modify files here. Possibly modifyFile()
+
+					Scanner scnr = new Scanner(new FileInputStream(in.nextLine() + ".txt"));
+					System.out.println("Voiceline within the voice");
+					while (scnr.hasNextLine()) {
+						System.out.println(scnr.nextLine());
+					}
+					System.out.println("Pick index of voiceline");
+					int indexpicked3 = in.nextInt();
+					
+					for (int y=0; y<indexpicked3; y++) {
+						VoicelineTroughIndex2 = scnr.nextLine();
+					}
+					System.out.println("Modify voiceline.");
+
+					String NewModifiedVoiceline = in.nextLine();
+
+					
+						
+					VoicelineTroughIndex2.replace(VoicelineTroughIndex2, NewModifiedVoiceline);
+					
+					
+
+					scnr.close();
+					break;
 					break;
 
 				case 'G':
@@ -171,14 +198,13 @@ public class Java_projecti {
 					System.out.println("List of voices");
 					String VoicelineTroughIndex= "";
 					final Scanner Voices7 = new Scanner(new File("Voices.txt"));
-					while (Voices7.hasNext()) {
-						System.out.println(Voices7.nextLine());
+					
 						while (Voices7.hasNextLine()) {
 							Voice = Voices7.nextLine();
 							System.out.println(Voice);
 						}
-					}
-					in.nextLine();
+					
+					
 					Scanner scnr = new Scanner(new FileInputStream(in.nextLine() + ".txt"));
 					System.out.println("Voiceline within the voice");
 					while (scnr.hasNextLine()) {
@@ -212,10 +238,11 @@ public class Java_projecti {
 					System.out.println("Pick the index of a voice");
 					System.out.println("List of voices");
 					Scanner Voices8= new Scanner("Voices.txt");
-
+					String filename="";
 					while (Voices8.hasNextLine()) {
 						Voice = Voices8.nextLine();
 						System.out.println(Voice);
+						filename=Voice;
 					}
 					int IndexPicked=in.nextInt();
 					final Scanner Voices10 = new Scanner(new File("Voiceswithoutindex.txt"));
@@ -224,15 +251,17 @@ public class Java_projecti {
 						 VoicepickedbyIndex= Voices10.nextLine();
 
 					}
+						
 					Voices10.close();
 					
 					
-					File NewFile = new File(VoicepickedbyIndex+"txt"); 
+					File NewFile = new File(VoicepickedbyIndex+".txt"); 
 				    if (NewFile.delete()) { 
 				      System.out.println("Deleted the folder: " + NewFile.getName());
 				    } else {
 				      System.out.println("Failed to delete the folder.");
 				    } 
+				   
 					break;
 
 				case 'I':
@@ -264,8 +293,12 @@ public class Java_projecti {
 					double number = Math.random();
 					long number2 = Math.round(number) * (VoicelineArray.size());
 					int number3 = Math.toIntExact(number2);
-					System.out.println(VoicelineArray.get(number3));
-					
+					if (number3>=1) {
+					System.out.println(VoicelineArray.get(number3-1));
+					}
+					else {
+						System.out.println(VoicelineArray.get(number3));
+					}
 					break;
 				}
 
