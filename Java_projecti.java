@@ -104,7 +104,7 @@ public class Java_projecti {
 
 					System.out.println("Write a voice line to add to the file");
 					FileWriter VoicelineWriter = new FileWriter(Voice + "txt", true);
-					SumOfVoicelines = "SumOfVoiceLines" 
+				
 					VoicelineWriter.write(SumOfVoiceLines + " " +in.nextLine() +"\n");
 					VoicelineWriter.close();
 					Voices4.close();
