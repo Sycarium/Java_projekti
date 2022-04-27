@@ -27,7 +27,7 @@ public class Java_projecti {
 			Scanner in = new Scanner(System.in);
 			String AnswerYesorNo = in.nextLine();
 
-			if (AnswerYesorNo.equals("Y") || AnswerYesorNo.equals("y")) {
+			if (AnswerYesorNo.equals("Y")) {
 				System.out.println("Question: Would you want to:");
 				System.out.println("A) Add voice files to the bank");
 				System.out.println("B) Show list of voices");
@@ -194,12 +194,12 @@ public class Java_projecti {
 
 					String AnswerYesorNo2 = in.nextLine();
 
-					if (AnswerYesorNo.equals("Y") || AnswerYesorNo.equals("y")) {
+					if (AnswerYesorNo2.equals("Y")) {
 						
 					VoicelineTroughIndex.replace(VoicelineTroughIndex, "");
 					}
 					
-					if (AnswerYesorNo.equals("N") || AnswerYesorNo.equals("n")) {
+					if (AnswerYesorNo2.equals(("N"))) {
 						System.out.println("Voiceline is still there!");
 					}
 
@@ -240,15 +240,24 @@ public class Java_projecti {
 					Scanner Voices9 = new Scanner("Voices.txt");
 					FileWriter CollectionofVoices = new FileWriter("VoiceLineCollection.txt");
 					Scanner CollectionofVoices2 = new Scanner("VoiceLineCollection2.txt");
+					Scanner VoicelineScanner2 = new Scanner("VoiceLineCollection.txt");
+					FileWriter VoiceLineCollection = new FileWriter("VoiceLineCollection.txt");
 					List<String> VoicelineArray = new ArrayList<String>();
 					while (Voices9.hasNext()) {
 						Voice = Voices9.nextLine();
-						
-						CollectionofVoices.write(Voice);
 						{
-					while (CollectionofVoices2.hasNext()) {
+							Scanner VoicelineScanner = new Scanner(Voice+"txt");
+							
+							while (VoicelineScanner.hasNextLine()) {
+								VoiceLineCollection.write(VoicelineScanner.nextLine());
+							}
+															}
+						}
+					
+						{
+					while (VoicelineScanner2.hasNext()) {
 
-						VoicelineArray.add(CollectionofVoices2.next());
+						VoicelineArray.add(VoicelineScanner2.next());
 					}
 						}
 
@@ -262,7 +271,7 @@ public class Java_projecti {
 
 			}
 
-			if (AnswerYesorNo.equals("N") || AnswerYesorNo.equals("n")) {
+			if (AnswerYesorNo.equals(("N"))) {
 				break;
 			}
 
