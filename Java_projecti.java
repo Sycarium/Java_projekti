@@ -21,10 +21,6 @@ public class Java_projecti {
 
 		FileWriter VoicesList = new FileWriter("Voices");
 		VoicesList.write("I'm an alien");
-		// BufferedWriter Voiceslist2 = new BufferedWriter(new
-		// FileWriter("Voices.txt"));
-		// Voiceslist2.write("Michael Jackson");
-		// Voiceslist2.close();
 		int SumOfVoiceLines = 0;
 
 		while (true) {
@@ -83,9 +79,9 @@ public class Java_projecti {
 						System.out.println(Voice);
 					}
 					String Voice = in.nextLine();
-					Scanner VoicelineShower = new Scanner(Voicename2);
-					while (VoicelineShower.hasNextLine()) {
-						String Voiceline = VoicelineShower.next();
+					Scanner VoicelineShower = new Scanner(new File(Voice+".txt"));
+					while (VoicelineShower.hasNext()) {
+						String Voiceline = VoicelineShower.nextLine();
 						System.out.println(Voiceline);
 					}
 					Voices3.close();
@@ -167,7 +163,7 @@ public class Java_projecti {
                         System.out.println(scnr4.nextLine());
                     }
                     String replace;
-                    String uusi;
+                    String eka;
 				      Scanner scan3 = new Scanner(System.in);
 				      
 				      System.out.println("Enter the line to modify: ");
@@ -175,10 +171,10 @@ public class Java_projecti {
 				      File file4 = new File(filename2 + ".txt");
 				      replace = scan3.nextLine();
 				      System.out.println("Enter the new line: ");
-				      uusi = scan3.nextLine();
+				      eka = scan3.nextLine();
 				      try (Stream<String> lines = Files.lines(file4.toPath())) {
 				    	   List<String> replaced = lines
-				    	       .map(line-> line.replaceAll(replace, uusi))
+				    	       .map(line-> line.replaceAll(replace, eka))
 				    	       .collect(Collectors.toList());
 				    	   Files.write(file4.toPath(), replaced);
 				    	}
