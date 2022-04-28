@@ -16,16 +16,17 @@ public class Java_projecti {
 	public static void main(String args[]) throws IOException {
 
 		File Voices = new File("Voices.txt");
-		int SumofVoices= 0;
+		int SumofVoices = 0;
 		String Voicename2 = "";
 
 		FileWriter VoicesList = new FileWriter("Voices");
 		VoicesList.write("I'm an alien");
-		//BufferedWriter Voiceslist2 = new BufferedWriter(new FileWriter("Voices.txt"));
-		//Voiceslist2.write("Michael Jackson");
-		//Voiceslist2.close();
+		// BufferedWriter Voiceslist2 = new BufferedWriter(new
+		// FileWriter("Voices.txt"));
+		// Voiceslist2.write("Michael Jackson");
+		// Voiceslist2.close();
 		int SumOfVoiceLines = 0;
-		
+
 		while (true) {
 			System.out.println("Modify voicebank script database? Y or N");
 			Scanner in = new Scanner(System.in);
@@ -153,13 +154,35 @@ public class Java_projecti {
 				case 'F':
 					System.out.println("Write the Voice in which you want to modify a voice line");
 					System.out.println("List of voices");
-					Scanner Voices6 = new Scanner(Voices);
-
+					final Scanner Voices6 = new Scanner(new File("Voices.txt"));
+					
 					while (Voices6.hasNextLine()) {
 						Voice = Voices6.nextLine();
 						System.out.println(Voice);
 					}
-					// code to modify files here. Possibly modifyFile()
+					String filename2 = in.nextLine();
+                    Scanner scnr4 = new Scanner(new FileInputStream(filename2 + ".txt"));
+                    System.out.println("Voiceline within the voice");
+                    while (scnr4.hasNextLine()) {
+                        System.out.println(scnr4.nextLine());
+                    }
+                    String replace;
+                    String uusi;
+				      Scanner scan3 = new Scanner(System.in);
+				      
+				      System.out.println("Enter the line to modify: ");
+				      
+				      File file4 = new File(filename2 + ".txt");
+				      replace = scan3.nextLine();
+				      System.out.println("Enter the new line: ");
+				      uusi = scan3.nextLine();
+				      try (Stream<String> lines = Files.lines(file4.toPath())) {
+				    	   List<String> replaced = lines
+				    	       .map(line-> line.replaceAll(replace, uusi))
+				    	       .collect(Collectors.toList());
+				    	   Files.write(file4.toPath(), replaced);
+				    	}
+				      System.out.println("Line successfully modified.");
 					break;
 
 				case 'G':
@@ -191,7 +214,7 @@ public class Java_projecti {
 				                          .filter(line -> !line.contains(rivi))
 				                          .collect(Collectors.toList());
 				      Files.write(file1.toPath(), out1, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
-
+				      System.out.println("Line successfully deleted.");
                     
                     break;
 
@@ -225,7 +248,7 @@ public class Java_projecti {
 				                          .filter(line -> !line.contains(filename))
 				                          .collect(Collectors.toList());
 				      Files.write(file.toPath(), out, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
-
+				      
 					break;
 
 				case 'I':
