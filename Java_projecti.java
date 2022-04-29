@@ -82,7 +82,7 @@ public class Java_projecti {
 						System.out.println(Voice);
 					}
 					String Voice = in.nextLine();
-					Scanner VoicelineShower = new Scanner(Voicename2);
+					Scanner VoicelineShower = new Scanner(Voice +".txt");
 					while (VoicelineShower.hasNextLine()) {
 						String Voiceline = VoicelineShower.next();
 						System.out.println(Voiceline);
